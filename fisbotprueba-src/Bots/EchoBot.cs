@@ -19,12 +19,12 @@ namespace Microsoft.BotBuilderSamples.Bots
 
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
-            var welcomeText = "123456";
+            var welcomeText = "Hola";
             foreach (var member in membersAdded)
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola Innovador"), cancellationToken);
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola Innovador como estas?"), cancellationToken);
                 }
             }
         }
